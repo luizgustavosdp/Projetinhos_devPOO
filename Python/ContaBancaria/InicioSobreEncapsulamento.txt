@@ -1,0 +1,50 @@
+O Python diferente de outras linguagem, como java, deixa os atributos publicos por padrão. 
+No Python temos algo chamado de convenção. Quando usada corretamente, ela oculta os atributos e classes.
+Utilizamos o símbolo underscore "_"
+
+#Publico = Permite acesso tanto de dentro quanto fora da classe. Utilizamos o underline"_" na frente do nome.
+#Protegido = Somente classe e subclasse terão acesso a atrubitos e metodos. Underline"_" antes do nome
+#Privado = Permite somente a classe tenha acesso ao atributo e metodo. Underline duplo"_" na frente do nome
+
+Um dos recursos mais importantes da orientação a objetos é o de restringir o acesso às variáveis de um objeto e a alguns métodos.
+
+O objetivo principal desta ação é evitar que variáveis internas sejam acessadas e recebam valores diretamente ou, ainda, 
+que métodos internos sejam invocados externamente, garantindo, assim, a integridade das informações.
+
+Para permitir acesso aos atributos de forma controlada usamos Getters e Setters, retorna e grava valor.
+
+#Getters = ler valores internos e envia como retorno de valor da função. get_nome do atributo() ex: get_idade(self):return self._idade
+#Set recebe argumentos que serão atribuidos a membros internos do objeto. set_nome do atributo(valor por parâmetro) ex: def set_idade(self, valor):self.idade=valor
+'Self' é uma convenção usada para se referir à instância atual de uma classe dentro dos métodos dessa classe.
+No construtor '__init__', self é usado para atribuir os valores passados como argumentos (nome e idade) aos atributos do objeto que está sendo criado.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Encapsular os dados de uma classe é muito importante, pois deixa seu sistema organizado para possíveis mudanças.
+Quando os dados estão encapsulados não é necessário mudar as regras de negócio em vários lugares, mas sim em um único lugar, já que essa regra está encapsulada.
+O conjunto de métodos públicos de uma classe é conhecido como Interface da classe, sendo a única maneira de comunicação com os objetos da classe.
+
+Na prática, em Python (diferentemente da linguagem Java), o “_” (underline) antes do atributo não impede o acesso dele em outra classe, ou seja, ele não fica privado.
+Essa forma é somente um indicativo de que os métodos nos quais os nomes iniciam com “_” (underline) não devem (mas podem) ser acessados.
+
+Problemas acarretados por isso:
+Por exemplo, na manipulação da classe Conta, o atributo saldo deve ser manipulado somente pelos métodos Saque() e Depósito() evitando, assim, que seja inserido um valor negativo no saldo.
+Em alguns atributos é muito importante preservar o valor iniciado na classe, não sendo possível realizar a inserção de qualquer valor no atributo, a não ser por meio de métodos.
+No caso do atributo saldo, por exemplo, ele não deve ficar negativo. (Em uma taxa fixa por exemplo não terá que ser possivel que seja alterada).
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Protocolo de Descritores - Decorator
+Um decorator é um padrão de projeto de software que permite adicionar comportamento a um objeto já existente, em tempo de execução, ou seja, agrega, de forma dinâmica, responsabilidades adicionais a um objeto.
+Na prática, o decorator permite que atributos de uma classe tenham responsabilidades.
+Um decorator é um objeto invocável, uma função que aceita outra função como parâmetro (a função decorada).
+O decorator pode realizar algum processamento com a função decorada e devolvê-la ou substituí-la por outra função.
+
+A linguagem Python traz uma outra solução para manter os atributos privados, conhecida como Property.
+A função Property é um Decorator e é utilizada para obter um valor de um atributo.
+Basicamente, a função Property permite que você declare uma função para obter o valor de um atributo.
+
+Em Python, não é considerada uma boa prática criar uma classe e, logo em seguida, adicionar propriedades (property) para todos os atributos.
+A função Property deve ser utilizada somente se você precisar da funcionalidade de transformar ou verificar um atributo quando ele é atribuído ou lido.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
