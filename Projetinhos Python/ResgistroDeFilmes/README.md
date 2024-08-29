@@ -1,1 +1,1 @@
-
+Neste pequeno projeto, criei um registrador de filmes e notas. Usando funções e listas, o programa cria e registra um novo filme, com a contagem de minutos e nota. A nota é atribuida ao filme pedido, e vinculado ao nome da pessoa que deu a nota. No final é mostrado os filmes registrados, a duração e as notas.
